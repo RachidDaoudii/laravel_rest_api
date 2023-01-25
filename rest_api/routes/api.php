@@ -22,6 +22,9 @@ use App\Http\Controllers\ProductController;
 // 2eme methode
 Route::resource('products',ProductController::class);
 
+// Route search
+Route::get('/products/search/{name}',[ProductController::class,'search']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
